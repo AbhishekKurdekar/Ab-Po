@@ -4,103 +4,77 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Our Love Story 💖</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- LOGIN SCREEN -->
+<!-- ❤️ FLOATING HEARTS -->
+<div id="hearts"></div>
+
+<!-- 🔐 PAGE 1 : LOCK SCREEN -->
 <div id="lockScreen" class="lock">
-  <div class="lock-bg">
-    <div class="bg-left"></div>
-    <div class="bg-right"></div>
-  </div>
-
   <div class="lock-card">
-    <div class="profile-circle">
-      <img src="image_148331.jpg" alt="Us">
-    </div>
+    <h1>💌 A Little Surprise</h1>
+    <p>Only for the one who owns my heart ❤️</p>
 
-    <h1>A Little Surprise</h1>
-    <p class="subtitle">Only for the one who owns my heart ❤️</p>
-
-    <input type="password" id="password" placeholder="Enter our secret">
-    <button onclick="unlock()">Unlock 💖</button>
-
+    <input type="password" id="password" placeholder="Enter our secret" />
+    <button onclick="unlock()">Unlock 💕</button>
     <p id="error"></p>
   </div>
 </div>
 
-<!-- CONTENT -->
-<div id="content" class="content" style="display:none;">
+<!-- 🌸 PAGE 2 : MAIN CONTENT -->
+<div id="content" style="display:none;">
+
   <audio id="bgMusic" loop>
-    <source src="music.mp3" type="audio/mp3">
+    <source src="music.mp3" type="audio/mp3" />
   </audio>
 
-  <!-- STORY TITLE -->
   <section class="hero">
-    <h1 class="story-title">From Us to Forever 💞</h1>
-    <p class="story-quote">
-      "In the story of my life, the best chapters are with you."
-    </p>
+    <h1>From Us to Forever 💞</h1>
+    <p>Some stories are written by destiny, ours was written by love</p>
   </section>
 
-  <!-- STORY -->
-  <section class="story-section">
-    <h2>Our Journey 🌸</h2>
-    <p>We didn’t plan this love… it just happened 💫</p>
-    <p>From strangers to soulmates, every moment mattered.</p>
-    <p class="kannada-text">
-      Ninna jothe irbeku anta ansthide ❤️
-    </p>
-  </section>
-
-  <!-- GALLERY -->
   <section class="gallery">
     <h2>Our Memories 📸</h2>
 
-    <div class="gallery-grid">
+    <div class="photos">
       <div class="photo-card">
         <img src="photos/1.jpg">
-        <div class="overlay">The day everything felt right 💕</div>
+        <div class="caption">The day everything felt right 💕</div>
       </div>
 
       <div class="photo-card">
         <img src="photos/2.jpg">
-        <div class="overlay">Your smile, my weakness 😊</div>
+        <div class="caption">Your smile, my weakness 😊</div>
       </div>
 
       <div class="photo-card">
         <img src="photos/3.jpg">
-        <div class="overlay">Always better together 💍</div>
+        <div class="caption">Forever us ❤️</div>
       </div>
     </div>
   </section>
 
-  <!-- PROPOSAL -->
   <section class="proposal">
     <h1>Will you be my Valentine? 💘</h1>
-
-    <div class="btn-group">
-      <button id="yes" onclick="yesClick()">Yes ❤️</button>
-      <button id="no" onmouseover="moveNo()">No 💔</button>
-    </div>
+    <button id="yes" onclick="goFinal()">Yes ❤️</button>
+    <button id="no" onmouseover="moveNo()">No 💔</button>
   </section>
+
 </div>
 
-<!-- FINAL SCREEN -->
+<!-- 💍 PAGE 3 : FINAL -->
 <div id="finalScreen" class="final-screen" style="display:none;">
-  <div class="final-overlay">
-    <div id="namesInitial" class="merge-names">
-      Abhishek <span>❤️</span> Pooja
-    </div>
+  <div class="name-merge" id="mergeNames">
+    <span>Abhishek</span>
+    <span class="heart">❤️</span>
+    <span>Pooja</span>
+  </div>
 
-    <div id="finalName" class="final-name">
-      Pooja Abhishek Kurdekar 💍
-    </div>
-
-    <div id="finalMsg" class="final-msg">
-      Today, tomorrow, and all our forever ❤️
-    </div>
+  <div id="finalText" class="final-text">
+    Abhishek ❤️ Pooja<br>
+    Forever & Always
   </div>
 </div>
 
