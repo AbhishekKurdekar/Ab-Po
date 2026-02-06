@@ -1,59 +1,37 @@
+/* ❤️ HEART GENERATOR */
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "floating-heart";
+  heart.innerText = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 15 + 15 + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 6000);
+}, 400);
+
+/* 🔐 UNLOCK */
 function unlock() {
   const pass = document.getElementById("password").value;
-  if (pass === "040825") {
+  if (pass === "love") {
     document.getElementById("lockScreen").style.display = "none";
     document.getElementById("content").style.display = "block";
     document.getElementById("bgMusic").play();
   } else {
-    document.getElementById("error").innerText = "Wrong password 💔";
-    document.getElementById("error").style.color = "red";
+    document.getElementById("error").innerText = "Wrong secret 💔";
   }
 }
 
+/* 💔 NO BUTTON */
 function moveNo() {
-  const no = document.getElementById("no");
-  const x = Math.random() * (window.innerWidth - 160) - (window.innerWidth / 2 - 80);
-  const y = Math.random() * 100 - 50;
-  no.style.transform = `translate(${x}px, ${y}px)`;
+  const btn = document.getElementById("no");
+  btn.style.position = "absolute";
+  btn.style.left = Math.random() * 70 + "vw";
+  btn.style.top = Math.random() * 70 + "vh";
 }
 
-function yesClick() {
+/* 💍 YES → FINAL PAGE */
+function goFinal() {
   document.getElementById("content").style.display = "none";
-  const final = document.getElementById("finalScreen");
-  final.style.display = "flex";
-
-  // Name Merge Sequence
-  setTimeout(() => {
-    document.getElementById("namesInitial").classList.add("hide");
-  }, 1200);
-
-  setTimeout(() => {
-    document.getElementById("finalName").classList.add("show");
-    document.getElementById("finalMsg").classList.add("show");
-    spawnHearts(30);
-  }, 2400);
+  document.getElementById("finalScreen").style.display = "flex";
 }
-
-function spawnHearts(count) {
-  for (let i = 0; i < count; i++) {
-    setTimeout(() => {
-      const h = document.createElement("div");
-      h.className = "heart-float";
-      h.innerHTML = "❤️";
-      h.style.left = Math.random() * 100 + "vw";
-      document.body.appendChild(h);
-      setTimeout(() => h.remove(), 6000);
-    }, i * 100);
-  }
-}
-
-// Constant background hearts
-setInterval(() => {
-  const h = document.createElement("div");
-  h.className = "heart-float";
-  h.innerHTML = "💖";
-  h.style.left = Math.random() * 100 + "vw";
-  h.style.opacity = Math.random();
-  document.body.appendChild(h);
-  setTimeout(() => h.remove(), 6000);
-}, 800);
