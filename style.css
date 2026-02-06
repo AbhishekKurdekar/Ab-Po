@@ -1,244 +1,165 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
 }
 
-body, html {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+/* 🌈 BACKGROUND */
+body {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   overflow-x: hidden;
 }
 
-/* LOGIN */
+/* ❤️ FLOATING HEARTS */
+.floating-heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 20px;
+  animation: floatUp 6s linear;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
+
+/* 🔐 LOCK SCREEN */
 .lock {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-}
-
-.lock-bg {
-  position: absolute;
-  inset: 0;
-  display: flex;
-}
-
-.bg-left {
-  flex: 1;
-  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
-}
-
-.bg-right {
-  flex: 1;
-  background: #fff0f3;
 }
 
 .lock-card {
   background: white;
+  padding: 30px;
+  border-radius: 20px;
   width: 90%;
-  max-width: 380px;
-  padding: 40px 30px;
-  border-radius: 25px;
+  max-width: 350px;
   text-align: center;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  z-index: 2;
-  animation: pop 0.6s ease;
-}
-
-.profile-circle {
-  width: 90px;
-  height: 90px;
-  margin: -85px auto 10px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid white;
-}
-
-.profile-circle img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  box-shadow: 0 0 25px rgba(0,120,255,0.5);
 }
 
 .lock-card input {
   width: 100%;
   padding: 12px;
-  margin-top: 15px;
-  border-radius: 12px;
-  border: 1px solid #ccc;
+  border-radius: 10px;
+  border: 2px solid #4da6ff;
+  margin-top: 12px;
 }
 
 .lock-card button {
-  margin-top: 20px;
+  margin-top: 15px;
+  padding: 12px;
   width: 100%;
-  padding: 14px;
-  border-radius: 14px;
-  border: none;
-  background: #ff4d6d;
+  border-radius: 12px;
+  background: #ff5e78;
   color: white;
-  font-size: 16px;
-  cursor: pointer;
+  border: none;
+  font-size: 18px;
 }
 
-/* HERO */
+/* 🌸 PAGE 2 */
 .hero {
   text-align: center;
-  padding: 80px 20px 40px;
+  padding: 40px 20px;
 }
 
-.story-title {
-  font-size: 2.2rem;
-  animation: fadeUp 1s ease;
-}
-
-.story-quote {
-  opacity: 0.8;
-}
-
-/* STORY */
-.story-section {
-  text-align: center;
-  padding: 60px 20px;
-  background: #d90429;
-  color: white;
-}
-
-.kannada-text {
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-/* GALLERY */
 .gallery {
-  padding: 60px 20px;
-  text-align: center;
-  background: #fde2e4;
+  padding: 20px;
 }
 
-.gallery-grid {
+.photos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
 }
 
 .photo-card {
   position: relative;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 14px;
 }
 
 .photo-card img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
+  display: block;
 }
 
-.photo-card:hover img {
-  transform: scale(1.1);
-}
-
-.overlay {
+.caption {
   position: absolute;
-  inset: 0;
+  bottom: 0;
   background: rgba(0,0,0,0.6);
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  opacity: 0;
-  transition: 0.4s ease;
-  padding: 20px;
+  padding: 8px;
+  width: 100%;
+  font-size: 14px;
+  transform: translateY(100%);
+  transition: 0.3s;
 }
 
-.photo-card:hover .overlay {
-  opacity: 1;
+.photo-card:hover .caption,
+.photo-card:active .caption {
+  transform: translateY(0);
 }
 
-/* PROPOSAL */
+/* 💘 PROPOSAL */
 .proposal {
-  padding: 80px 20px;
   text-align: center;
-  background: #d90429;
-  color: white;
+  padding: 40px 20px;
 }
 
-.btn-group {
-  position: relative;
-  height: 100px;
+.proposal button {
+  font-size: 22px;
+  padding: 14px 30px;
+  border-radius: 30px;
+  margin: 10px;
+  border: none;
 }
 
 #yes {
-  padding: 14px 36px;
-  border-radius: 30px;
-  border: none;
-  font-weight: bold;
+  background: #ff4d6d;
+  color: white;
 }
 
 #no {
-  position: absolute;
-  left: 60%;
-  padding: 14px 36px;
-  border-radius: 30px;
-  border: none;
+  background: #ddd;
 }
 
-/* FINAL */
+/* 💍 FINAL PAGE */
 .final-screen {
   position: fixed;
   inset: 0;
-  background: url("BG.jpg") center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.final-overlay {
-  background: rgba(0,0,0,0.6);
-  width: 100%;
-  height: 100%;
-  color: white;
+  background: url("yes-bg.jpg") center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.merge-names {
-  font-size: 40px;
-  animation: pop 1s ease;
-}
-
-.final-name {
+.name-merge {
   font-size: 42px;
+  color: white;
+  animation: merge 3s forwards;
+}
+
+.final-text {
+  font-size: 32px;
+  color: white;
   opacity: 0;
-  transition: 1s;
-}
-
-.final-name.show {
-  opacity: 1;
-}
-
-.final-msg {
   margin-top: 20px;
-  opacity: 0;
-  transition: 1s;
+  animation: showText 2s forwards 3s;
 }
 
-.final-msg.show {
-  opacity: 1;
+@keyframes merge {
+  0% { transform: scale(1); }
+  100% { transform: scale(0); opacity: 0; }
 }
 
-/* ANIMATIONS */
-@keyframes pop {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-@keyframes fadeUp {
-  from { transform: translateY(30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+@keyframes showText {
+  to { opacity: 1; }
 }
