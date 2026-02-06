@@ -1,22 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Our Love Story 💖</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- FLOATING HEARTS -->
-<div id="heartContainer"></div>
+<!-- ❤️ FLOATING HEARTS -->
+<div id="hearts"></div>
 
-<!-- LOCK SCREEN -->
+<!-- 🔐 PAGE 1 : LOCK SCREEN -->
 <div id="lockScreen" class="lock">
   <div class="lock-card">
-    <img src="images/lock-photo.jpg" alt="Us">
     <h1>💌 A Little Surprise</h1>
     <p>Only for the one who owns my heart ❤️</p>
 
-    <input type="password" id="password" placeholder="Enter our secret">
-    <button onclick="unlock()">Unlock ❤️</button>
+    <input type="password" id="password" placeholder="Enter our secret" />
+    <button onclick="unlock()">Unlock 💕</button>
+    <p id="error"></p>
+  </div>
+</div>
+
+<!-- 🌸 PAGE 2 : MAIN CONTENT -->
+<div id="content" style="display:none;">
+
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mp3" />
+  </audio>
+
+  <section class="hero">
+    <h1>From Us to Forever 💞</h1>
+    <p>Some stories are written by destiny, ours was written by love</p>
+  </section>
+
+  <section class="gallery">
+    <h2>Our Memories 📸</h2>
+
+    <div class="photos">
+      <div class="photo-card">
+        <img src="photos/1.jpg">
+        <div class="caption">The day everything felt right 💕</div>
+      </div>
+
+      <div class="photo-card">
+        <img src="photos/2.jpg">
+        <div class="caption">Your smile, my weakness 😊</div>
+      </div>
+
+      <div class="photo-card">
+        <img src="photos/3.jpg">
+        <div class="caption">Forever us ❤️</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proposal">
+    <h1>Will you be my Valentine? 💘</h1>
+    <button id="yes" onclick="goFinal()">Yes ❤️</button>
+    <button id="no" onmouseover="moveNo()">No 💔</button>
+  </section>
+
+</div>
+
+<!-- 💍 PAGE 3 : FINAL -->
+<div id="finalScreen" class="final-screen" style="display:none;">
+  <div class="name-merge" id="mergeNames">
+    <span>Abhishek</span>
+    <span class="heart">❤️</span>
+    <span>Pooja</span>
+  </div>
+
+  <div id="finalText" class="final-text">
+    Abhishek ❤️ Pooja<br>
+    Forever & Always
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
